@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | ATELYN Control</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #050505;
+            --bg-accent: #0f0f0f;
+            --atelyn-gold: #D4AF37;
+            --text-main: #ffffff;
+            --font-header: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-deep); color: var(--text-main); font-family: var(--font-body); display: flex; }
+
+        /* Sidebar Navigation [cite: 418-428] */
+        .admin-sidebar { width: 280px; height: 100vh; background: #000; border-right: 1px solid #222; padding: 40px 20px; position: fixed; }
+        .admin-logo { font-family: var(--font-header); color: var(--atelyn-gold); font-size: 1.5rem; letter-spacing: 3px; margin-bottom: 50px; display: block; text-decoration: none; }
+        
+        .admin-nav { list-style: none; }
+        .admin-nav li { margin-bottom: 20px; }
+        .admin-nav a { color: #888; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; transition: 0.3s; }
+        .admin-nav a:hover, .admin-nav a.active { color: var(--atelyn-gold); }
+
+        /* Main Content Area */
+        .main-content { margin-left: 280px; flex: 1; padding: 60px; }
+        .dash-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+        .dash-header h1 { font-family: var(--font-header); font-size: 2rem; letter-spacing: 2px; }
+
+        /* Stats Grid [cite: 324-325] */
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 50px; }
+        .stat-card { background: var(--bg-accent); padding: 25px; border: 1px solid #222; }
+        .stat-card h4 { font-size: 0.7rem; color: #555; text-transform: uppercase; margin-bottom: 10px; }
+        .stat-card p { font-size: 1.5rem; color: var(--atelyn-gold); font-weight: 600; }
+
+        /* Management Tables [cite: 332, 350-353, 379-380] */
+        .manage-section { background: var(--bg-accent); border: 1px solid #222; padding: 30px; }
+        .manage-section h2 { font-size: 1rem; color: var(--atelyn-gold); text-transform: uppercase; margin-bottom: 25px; border-bottom: 1px solid #222; padding-bottom: 15px; }
+        
+        .admin-table { width: 100%; border-collapse: collapse; }
+        .admin-table th { text-align: left; color: #555; font-size: 0.7rem; padding: 15px; text-transform: uppercase; border-bottom: 1px solid #222; }
+        .admin-table td { padding: 15px; font-size: 0.85rem; border-bottom: 1px solid #111; }
+        
+        .status-badge { padding: 4px 8px; font-size: 0.65rem; background: #222; color: #888; border-radius: 2px; }
+        .status-badge.active { background: rgba(212, 175, 55, 0.2); color: var(--atelyn-gold); }
+
+        .btn-add { background: var(--atelyn-gold); color: #000; padding: 10px 20px; text-decoration: none; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+    <aside class="admin-sidebar">
+        <a href="#" class="admin-logo">ATELYN ADMIN</a>
+        <ul class="admin-nav">
+            <li><a href="#" class="active">Dashboard Overview</a></li>
+            <li><a href="#">Product Catalog</a></li>
+            <li><a href="#">Orders & Logistics</a></li>
+            <li><a href="#">Styled By You (Moderation)</a></li>
+            <li><a href="#">Franchise Applications</a></li>
+            <li><a href="#">Brand Collaborations</a></li>
+            <li><a href="#">Website Settings</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <header class="dash-header">
+            <h1>Ecosystem Control</h1>
+            <a href="#" class="btn-add">+ New Collection Item</a>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card"><h4>Active Orders</h4><p>24</p></div>
+            <div class="stat-card"><h4>Pending Franchise</h4><p>08</p></div>
+            <div class="stat-card"><h4>New Styled Gallery</h4><p>12</p></div>
+            <div class="stat-card"><h4>Total Revenue</h4><p>₹4.2L</p></div>
+        </div>
+
+        <section class="manage-section">
+            <h2>Community Showcase Moderation</h2>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>User Photo</th>
+                        <th>Username</th>
+                        <th>Identity Verification</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div style="width: 40px; height: 40px; background: #333;"></div></td>
+                        <td>@ModernAmbition</td>
+                        <td>Verified (Mobile)</td>
+                        <td><span class="status-badge active">Pending Review</span></td>
+                        <td><a href="#" style="color: var(--atelyn-gold); text-decoration: none;">Approve</a> | <a href="#" style="color: #666; text-decoration: none;">Decline</a></td>
+                    </tr>
+                    <tr>
+                        <td><div style="width: 40px; height: 40px; background: #333;"></div></td>
+                        <td>@EleganceDaily</td>
+                        <td>Verified (Mobile)</td>
+                        <td><span class="status-badge">Published</span></td>
+                        <td><a href="#" style="color: #666; text-decoration: none;">Remove</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+</body>
+</html>

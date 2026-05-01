@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Moderation | ATELYN Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #050505;
+            --bg-accent: #0f0f0f;
+            --atelyn-gold: #D4AF37;
+            --text-main: #ffffff;
+            --font-header: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-deep); color: var(--text-main); font-family: var(--font-body); display: flex; }
+
+        /* Sidebar Inherited */
+        .admin-sidebar { width: 260px; height: 100vh; background: #000; border-right: 1px solid #222; padding: 40px 20px; position: fixed; }
+        .admin-logo { font-family: var(--font-header); color: var(--atelyn-gold); font-size: 1.2rem; letter-spacing: 3px; margin-bottom: 50px; display: block; text-decoration: none; text-transform: uppercase; }
+        .admin-nav { list-style: none; }
+        .admin-nav li { margin-bottom: 20px; }
+        .admin-nav a { color: #666; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .admin-nav a:hover, .admin-nav a.active { color: var(--atelyn-gold); }
+
+        /* Main Content */
+        .main-content { margin-left: 260px; flex: 1; padding: 60px; }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+        .header-flex h1 { font-family: var(--font-header); font-size: 1.8rem; letter-spacing: 2px; color: var(--atelyn-gold); }
+
+        /* Moderation Grid [cite: 348-352, 358] */
+        .table-container { background: var(--bg-accent); border: 1px solid #222; padding: 30px; }
+        table { width: 100%; border-collapse: collapse; }
+        th { text-align: left; font-size: 0.7rem; color: #555; text-transform: uppercase; letter-spacing: 2px; padding: 15px; border-bottom: 1px solid #222; }
+        td { padding: 20px 15px; font-size: 0.85rem; border-bottom: 1px solid #111; color: #ccc; vertical-align: middle; }
+
+        .preview-img { width: 60px; height: 80px; background: #222; object-fit: cover; border: 1px solid #333; }
+        .verify-tag { font-size: 0.65rem; color: #44bd32; background: rgba(68, 189, 50, 0.1); padding: 2px 8px; border-radius: 4px; }
+        
+        .action-btn { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; margin-right: 15px; font-weight: 600; }
+        .approve { color: var(--atelyn-gold); }
+        .decline { color: #666; }
+    </style>
+</head>
+<body>
+
+    <aside class="admin-sidebar">
+        <a href="admin.html" class="admin-logo">ATELYN Admin</a>
+        <ul class="admin-nav">
+            <li><a href="admin.html">Dashboard</a></li>
+            <li><a href="admin-products.html">Product Catalog</a></li>
+            <li><a href="admin-orders.html">Orders</a></li>
+            <li><a href="#" class="active">Styled By You</a></li>
+            <li><a href="admin-franchise.html">Franchise</a></li>
+            <li><a href="admin-collab.html">Collaborations</a></li>
+            <li><a href="admin-settings.html">Settings</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <div class="header-flex">
+            <h1>Styled By You Moderation</h1>
+            <div style="font-size: 0.8rem; color: #666;">Verification: Enabled (Phone Number)</div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Preview</th>
+                        <th>User Identity</th>
+                        <th>Contact Verified</th>
+                        <th>Upload Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://images.unsplash.com/photo-1512485800893-b08ec1ea59b1?auto=format&fit=crop&w=100&q=80" class="preview-img" alt="Gallery"></td>
+                        <td>@Modern_Ambition</td>
+                        <td><span class="verify-tag">Verified ✓</span></td>
+                        <td>2026-04-29</td>
+                        <td><span style="color: var(--atelyn-gold); font-size: 0.75rem;">Pending</span></td>
+                        <td>
+                            <a href="#" class="action-btn approve">Publish</a>
+                            <a href="#" class="action-btn decline">Decline</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="preview-img"></div></td>
+                        <td>@Atelyn_Class</td>
+                        <td><span class="verify-tag">Verified ✓</span></td>
+                        <td>2026-04-28</td>
+                        <td><span style="color: #555; font-size: 0.75rem;">Published</span></td>
+                        <td>
+                            <a href="#" class="action-btn decline">Remove</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+</body>
+</html>

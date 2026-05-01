@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Settings | ATELYN Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #050505;
+            --bg-accent: #0f0f0f;
+            --atelyn-gold: #D4AF37;
+            --text-main: #ffffff;
+            --font-header: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-deep); color: var(--text-main); font-family: var(--font-body); display: flex; }
+
+        /* Sidebar Inherited */
+        .admin-sidebar { width: 260px; height: 100vh; background: #000; border-right: 1px solid #222; padding: 40px 20px; position: fixed; }
+        .admin-logo { font-family: var(--font-header); color: var(--atelyn-gold); font-size: 1.2rem; letter-spacing: 3px; margin-bottom: 50px; display: block; text-decoration: none; text-transform: uppercase; }
+        .admin-nav { list-style: none; }
+        .admin-nav li { margin-bottom: 20px; }
+        .admin-nav a { color: #666; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .admin-nav a:hover, .admin-nav a.active { color: var(--atelyn-gold); }
+
+        /* Main Content */
+        .main-content { margin-left: 260px; flex: 1; padding: 60px; }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+        .header-flex h1 { font-family: var(--font-header); font-size: 1.8rem; letter-spacing: 2px; color: var(--atelyn-gold); }
+
+        /* Settings Sections */
+        .settings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .settings-card { background: var(--bg-accent); padding: 30px; border: 1px solid #222; }
+        .settings-card h2 { font-size: 0.9rem; color: var(--atelyn-gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; border-bottom: 1px solid #222; padding-bottom: 15px; }
+        
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-size: 0.7rem; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+        input, select, textarea { width: 100%; background: #111; border: 1px solid #333; padding: 12px; color: #fff; outline: none; }
+        input:focus { border-color: var(--atelyn-gold); }
+
+        .save-btn { background: var(--atelyn-gold); color: #000; padding: 12px 30px; border: none; font-weight: 600; text-transform: uppercase; cursor: pointer; letter-spacing: 1px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <aside class="admin-sidebar">
+        <a href="admin.html" class="admin-logo">ATELYN Admin</a>
+        <ul class="admin-nav">
+            <li><a href="admin.html">Dashboard</a></li>
+            <li><a href="admin-products.html">Product Catalog</a></li>
+            <li><a href="admin-orders.html">Orders</a></li>
+            <li><a href="admin-community.html">Styled By You</a></li>
+            <li><a href="admin-franchise.html">Franchise</a></li>
+            <li><a href="admin-collab.html">Collaborations</a></li>
+            <li><a href="#" class="active">Settings</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <div class="header-flex">
+            <h1>Website Configuration</h1>
+            <button class="save-btn">Save All Changes</button>
+        </div>
+
+        <div class="settings-grid">
+            <section class="settings-card">
+                <h2>Hero Section (Home)</h2>
+                <div class="form-group">
+                    <label>Main Headline</label>
+                    <input type="text" value="ATELYN">
+                </div>
+                <div class="form-group">
+                    <label>Sub-headline</label>
+                    <input type="text" value="Elegance in Every Thread.">
+                </div>
+                <div class="form-group">
+                    <label>Hero Image URL</label>
+                    <input type="text" placeholder="https://unsplash.com/...">
+                </div>
+            </section>
+
+            <section class="settings-card">
+                <h2>E-Commerce Thresholds</h2>
+                <div class="form-group">
+                    <label>Free Shipping Threshold (INR)</label>
+                    <input type="number" value="5000">
+                </div>
+                <div class="form-group">
+                    <label>COD Availability</label>
+                    <select><option>Enabled</option><option>Disabled</option></select>
+                </div>
+                <div class="form-group">
+                    <label>Standard Tax Rate (%)</label>
+                    <input type="number" value="18">
+                </div>
+            </section>
+
+            <section class="settings-card">
+                <h2>Legal & Compliance</h2>
+                <div class="form-group">
+                    <label>Privacy Policy (Content)</label>
+                    <textarea rows="4">Our commitment to your data trust...</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Startup India Registration No.</label>
+                    <input type="text" value="DIPP123456">
+                </div>
+            </section>
+
+            <section class="settings-card">
+                <h2>Brand Connectivity</h2>
+                <div class="form-group">
+                    <label>Official Support Email</label>
+                    <input type="email" value="support@atelyn.com">
+                </div>
+                <div class="form-group">
+                    <label>Instagram Handle</label>
+                    <input type="text" value="@atelyn_official">
+                </div>
+            </section>
+        </div>
+    </main>
+
+</body>
+</html>

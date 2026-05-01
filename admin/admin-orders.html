@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders & Logistics | ATELYN Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #050505;
+            --bg-accent: #0f0f0f;
+            --atelyn-gold: #D4AF37;
+            --text-main: #ffffff;
+            --font-header: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-deep); color: var(--text-main); font-family: var(--font-body); display: flex; }
+
+        /* Sidebar Inherited */
+        .admin-sidebar { width: 260px; height: 100vh; background: #000; border-right: 1px solid #222; padding: 40px 20px; position: fixed; }
+        .admin-logo { font-family: var(--font-header); color: var(--atelyn-gold); font-size: 1.2rem; letter-spacing: 3px; margin-bottom: 50px; display: block; text-decoration: none; text-transform: uppercase; }
+        .admin-nav { list-style: none; }
+        .admin-nav li { margin-bottom: 20px; }
+        .admin-nav a { color: #666; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .admin-nav a:hover, .admin-nav a.active { color: var(--atelyn-gold); }
+
+        /* Main Content */
+        .main-content { margin-left: 260px; flex: 1; padding: 60px; }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+        .header-flex h1 { font-family: var(--font-header); font-size: 1.8rem; letter-spacing: 2px; color: var(--atelyn-gold); }
+
+        /* Order Management Table [cite: 230-234] */
+        .table-container { background: var(--bg-accent); border: 1px solid #222; padding: 30px; }
+        table { width: 100%; border-collapse: collapse; }
+        th { text-align: left; font-size: 0.7rem; color: #555; text-transform: uppercase; letter-spacing: 2px; padding: 15px; border-bottom: 1px solid #222; }
+        td { padding: 15px; font-size: 0.85rem; border-bottom: 1px solid #111; color: #ccc; }
+
+        .status-pill { padding: 4px 10px; font-size: 0.65rem; border-radius: 20px; background: #1a1a1a; color: #888; }
+        .status-pill.processing { background: rgba(212, 175, 55, 0.1); color: var(--atelyn-gold); }
+        .status-pill.shipped { background: rgba(255, 255, 255, 0.1); color: #fff; }
+
+        .action-btn { color: var(--atelyn-gold); text-decoration: none; font-size: 0.8rem; border: 1px solid var(--atelyn-gold); padding: 5px 10px; transition: 0.3s; }
+        .action-btn:hover { background: var(--atelyn-gold); color: #000; }
+    </style>
+</head>
+<body>
+
+    <aside class="admin-sidebar">
+        <a href="admin.html" class="admin-logo">ATELYN Admin</a>
+        <ul class="admin-nav">
+            <li><a href="admin.html">Dashboard</a></li>
+            <li><a href="admin-products.html">Product Catalog</a></li>
+            <li><a href="#" class="active">Orders</a></li>
+            <li><a href="admin-community.html">Styled By You</a></li>
+            <li><a href="admin-franchise.html">Franchise</a></li>
+            <li><a href="admin-collab.html">Collaborations</a></li>
+            <li><a href="admin-settings.html">Settings</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <div class="header-flex">
+            <h1>Orders & Logistics</h1>
+            <div style="font-size: 0.8rem; color: #666;">Export Order Report (CSV)</div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Date</th>
+                        <th>Total Amount</th>
+                        <th>Payment Status</th>
+                        <th>Delivery Status</th>
+                        <th>Tracking</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#AT-10293</td>
+                        <td>Aman Sharma</td>
+                        <td>2026-04-28</td>
+                        <td>₹5,299</td>
+                        <td><span class="status-pill shipped">Paid (Card)</span></td>
+                        <td><span class="status-pill processing">Processing</span></td>
+                        <td><a href="#" class="action-btn">Update Track ID</a></td>
+                    </tr>
+                    <tr>
+                        <td>#AT-10294</td>
+                        <td>Priya Verma</td>
+                        <td>2026-04-29</td>
+                        <td>₹2,499</td>
+                        <td><span class="status-pill">Pending (COD)</span></td>
+                        <td><span class="status-pill shipped">Shipped</span></td>
+                        <td><a href="#" class="action-btn">View Tracking</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+</body>
+</html>
