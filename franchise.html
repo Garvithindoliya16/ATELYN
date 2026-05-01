@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franchise With ATELYN | Partner With Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #050505;
+            --atelyn-gold: #D4AF37;
+            --text-main: #ffffff;
+            --font-header: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+                /* Navigation Inherited */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 8%; background: rgba(5, 5, 5, 0.95);
+            position: sticky; top: 0; z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .logo { font-family: var(--font-header); font-size: 1.5rem; letter-spacing: 4px; color: var(--atelyn-gold); text-decoration: none; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-deep); color: var(--text-main); font-family: var(--font-body); line-height: 1.6; }
+
+        .f-hero { height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80') center/cover; border-bottom: 1px solid var(--atelyn-gold); }
+        .f-hero h1 { font-family: var(--font-header); font-size: 2.5rem; color: var(--atelyn-gold); letter-spacing: 5px; text-transform: uppercase; }
+
+        .f-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 80px 8%; }
+        .f-info h2 { color: var(--atelyn-gold); margin-bottom: 20px; font-family: var(--font-header); }
+        .f-list { list-style: none; margin-top: 20px; }
+        .f-list li { margin-bottom: 15px; color: #888; font-size: 0.9rem; }
+        .f-list li strong { color: var(--atelyn-gold); display: block; margin-bottom: 5px; }
+
+        .f-form { background: #0a0a0a; padding: 40px; border: 1px solid #222; }
+        .f-form input, .f-form select { width: 100%; background: #111; border: 1px solid #333; padding: 15px; color: #fff; margin-bottom: 20px; }
+        .f-btn { width: 100%; background: var(--atelyn-gold); color: #000; border: none; padding: 18px; font-weight: 600; text-transform: uppercase; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">ATELYN</a>
+    </nav>
+    <header class="f-hero">
+        <h1>Build Fashion Success With ATELYN</h1>
+    </header>
+
+    <div class="f-grid">
+        <div class="f-info">
+            <h2>Why Partner With Us?</h2> <ul class="f-list">
+                <li><strong>Premium Brand Identity</strong> Crafted for distinction and modern luxury.</li>
+                <li><strong>Scalable Model</strong> From exclusive stores to regional distribution.</li>
+                <li><strong>Full Support</strong> Training, marketing, and supply chain excellence.</li>
+            </ul>
+            
+            <h2 style="margin-top: 40px;">Franchise Models</h2> <ul class="f-list">
+                <li>• Exclusive ATELYN Store</li>
+                <li>• Multi-Brand Counter</li>
+                <li>• Regional Distribution</li>
+            </ul>
+        </div>
+
+        <div class="f-form">
+            <h3 style="margin-bottom: 30px; letter-spacing: 2px;">Apply For Franchise</h3> <input type="text" placeholder="Full Name / Company Name">
+            <input type="email" placeholder="Email Address">
+            <input type="text" placeholder="Location Preference">
+            <select>
+                <option>Select Business Model</option>
+                <option>Exclusive Store</option>
+                <option>Multi-Brand Counter</option>
+                <option>Distribution</option>
+            </select>
+            <button class="f-btn">Submit Application</button>
+        </div>
+    </div>
+</body>
+</html>

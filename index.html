@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATELYN | Elegance in Every Thread</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #050505;
+            --bg-accent: #0f0f0f;
+            --atelyn-gold: #D4AF37;
+            --atelyn-gold-muted: #b08d2b;
+            --text-main: #ffffff;
+            --font-header: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation [cite: 136] */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background: rgba(5, 5, 5, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .logo { font-family: var(--font-header); font-size: 1.8rem; letter-spacing: 5px; color: var(--atelyn-gold); text-decoration: none; }
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin: 0 20px; }
+        .nav-links a { text-decoration: none; color: #fff; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--atelyn-gold); }
+
+
+        /* Hero [cite: 143-147] */
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1920&q=80') center/cover; }
+        .hero h1 { font-family: var(--font-header); font-size: clamp(3.5rem, 10vw, 6rem); letter-spacing: 15px; color: var(--atelyn-gold); margin-bottom: 10px; text-transform: uppercase; }
+        .hero p { font-size: 1rem; letter-spacing: 4px; margin-bottom: 40px; font-weight: 300; color: rgba(255,255,255,0.8); }
+
+        .btn { padding: 18px 45px; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 3px; transition: var(--transition); display: inline-block; border: 1px solid var(--atelyn-gold); }
+        .btn-gold { background-color: var(--atelyn-gold); color: var(--bg-deep); font-weight: 600; }
+        .btn-outline { color: var(--atelyn-gold); margin-left: 15px; }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+
+        /* Featured Categories [cite: 148-154] */
+        .section { padding: 100px 8%; }
+        .section-title { text-align: center; padding: 100px 0 50px; font-family: var(--font-header); font-size: 2.5rem; letter-spacing: 5px; color: var(--atelyn-gold); text-transform: uppercase; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; padding: 0 8% 100px; }
+        .card { height: 500px; position: relative; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.1); background: #111; }
+        .card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: 1.5s ease; }
+        .card:hover img { opacity: 0.4; transform: scale(1.1); }
+        .card-content { position: absolute; bottom: 40px; left: 40px; }
+        .card-content h2 { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px; }
+
+
+        /* New Arrivals & Best Sellers  */
+        .product-scroll { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; scrollbar-width: none; }
+        .product-card { min-width: 280px; background: var(--bg-accent); padding: 15px; border: 1px solid #1a1a1a; }
+        .product-card img { width: 100%; height: 350px; object-fit: cover; margin-bottom: 15px; }
+        .product-card h4 { font-size: 0.9rem; letter-spacing: 1px; color: #ccc; }
+        .product-card .price { color: var(--atelyn-gold); font-weight: 600; margin-top: 5px; }
+
+        /* Brand Promise [cite: 159-160] */
+        .promise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; background: #000; padding: 60px 8%; border-top: 1px solid #1a1a1a; }
+        .promise-item h5 { color: var(--atelyn-gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+        .promise-item p { font-size: 0.75rem; color: #666; }
+
+        /* Signature Collection Banner  */
+        .signature-banner { height: 70vh; background: fixed center/cover url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80'); display: flex; align-items: center; justify-content: center; position: relative; }
+        .signature-content { background: rgba(0,0,0,0.7); padding: 50px; text-align: center; border: 1px solid var(--atelyn-gold); backdrop-filter: blur(5px); }
+
+        /* Why ATELYN [cite: 165-166] */
+        .why-section { background: var(--bg-accent); display: flex; flex-wrap: wrap; align-items: center; }
+        .why-text { flex: 1; min-width: 300px; padding: 80px; }
+        .why-text h2 { color: var(--atelyn-gold); font-family: var(--font-header); font-size: 2.5rem; margin-bottom: 20px; }
+        .why-img { flex: 1; min-width: 300px; height: 500px; background: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80') center/cover; }
+
+        /* Newsletter Signup  */
+        .newsletter { text-align: center; background: #000; padding: 80px 8%; border-top: 1px solid #1a1a1a; }
+        .newsletter h2 { color: var(--atelyn-gold); margin-bottom: 15px; letter-spacing: 3px; }
+        .newsletter input { padding: 15px; width: 300px; background: #111; border: 1px solid #333; color: #fff; outline: none; }
+        .newsletter button { padding: 15px 30px; background: var(--atelyn-gold); border: none; cursor: pointer; text-transform: uppercase; font-weight: 600; margin-left: 10px; }
+
+        /* Footer [cite: 260] */
+        footer { padding: 60px 8%; border-top: 1px solid #1a1a1a; text-align: center; color: #444; font-size: 0.7rem; letter-spacing: 2px; }
+
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(30px); transition: 1s; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">ATELYN</a>
+        <ul class="nav-links">
+            <li><a href="#new">New Arrivals</a></li>
+            <li><a href="shop-men.html">Men</a></li>
+            <li><a href="#women">Women</a></li>
+            <li><a href="#why">Why ATELYN</a></li>
+            <li><a href="about.html">About ATELYN</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div style="color: var(--atelyn-gold); font-size: 0.8rem; cursor: pointer;">BAG (0)</div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>ATELYN</h1>
+            <p>Elegance in Every Thread.</p>
+            <div class="hero-btns">
+                <a href="#shop" class="btn btn-gold">Shop Men</a>
+                <a href="#new" class="btn btn-outline">New Arrivals</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="promise-grid">
+        <div class="promise-item"><h5>Premium Quality</h5><p>Superior design & presentation</p></div>
+        <div class="promise-item"><h5>Modern Design</h5><p>Aspirational living style</p></div>
+        <div class="promise-item"><h5>Everyday Luxury</h5><p>Crafted for distinction</p></div>
+        <div class="promise-item"><h5>Secure Shopping</h5><p>Digital-first convenience</p></div>
+    </section>
+
+     <h2 class="section-title reveal" id="collections">Featured Categories</h2>
+    <section class="grid">
+        <div class="card reveal">
+            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80" alt="T-Shirts">
+            <div class="card-content">
+                <h2>Premium T-Shirts</h2>
+                <a href="#" class="btn btn-outline" style="padding: 10px 25px; font-size: 0.7rem;">View Collection</a>
+            </div>
+        </div>
+        <div class="card reveal">
+            <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=800&q=80" alt="Polos">
+            <div class="card-content">
+                <h2>Polo T-Shirts</h2>
+                <a href="#" class="btn btn-outline" style="padding: 10px 25px; font-size: 0.7rem;">View Collection</a>
+            </div>
+        </div>
+        <div class="card reveal">
+            <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80" alt="Shirts">
+            <div class="card-content">
+                <h2>Refined Shirts</h2>
+                <a href="#" class="btn btn-outline" style="padding: 10px 25px; font-size: 0.7rem;">View Collection</a>
+            </div>
+        </div>
+        <div class="card reveal">
+            <img src="https://images.unsplash.com/photo-1624371414361-e6709405d523?auto=format&fit=crop&w=800&q=80" alt="Trousers">
+            <div class="card-content">
+                <h2>Premium Trousers</h2>
+                <a href="#" class="btn btn-outline" style="padding: 10px 25px; font-size: 0.7rem;">View Collection</a>
+            </div>
+        </div>
+        <div class="card reveal">
+            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80" alt="Jackets">
+            <div class="card-content">
+                <h2>Signature Jackets</h2>
+                <a href="#" class="btn btn-outline" style="padding: 10px 25px; font-size: 0.7rem;">View Collection</a>
+            </div>
+        </div>
+        <div class="card reveal">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80" alt="New Arrivals">
+            <div class="card-content">
+                <h2>New Arrivals</h2>
+                <a href="#" class="btn btn-outline" style="padding: 10px 25px; font-size: 0.7rem;">Shop Latest</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section" id="new">
+        <h2 class="section-title reveal">New Arrivals</h2>
+        <div class="product-scroll reveal">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=400&q=80" alt="New Drop">
+                <h4>Premium Essential Tee</h4>
+                <p class="price">₹1,899</p>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1598033129183-c4f50c7176c8?auto=format&fit=crop&w=400&q=80" alt="New Drop">
+                <h4>Signature Oxford Shirt</h4>
+                <p class="price">₹2,999</p>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80" alt="New Drop">
+                <h4>Urban Tech Jacket</h4>
+                <p class="price">₹4,499</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="signature-banner reveal">
+        <div class="signature-content">
+            <h2 style="font-family: var(--font-header); font-size: 2rem; color: var(--atelyn-gold); margin-bottom: 10px;">Signature Collection</h2>
+            <p style="letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 25px;">Visual Storytelling of Modern Ambition</p>
+            <a href="#" class="btn btn-gold" style="font-size: 0.7rem;">View Collection</a>
+        </div>
+    </section>
+
+    <section class="section" id="best">
+        <h2 class="section-title reveal">Best Sellers</h2>
+        <div class="product-scroll reveal">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=400&q=80" alt="Hero Product">
+                <h4>The Distinction Polo</h4>
+                <p class="price">₹2,299</p>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=400&q=80" alt="Hero Product">
+                <h4>Modern Identity Trouser</h4>
+                <p class="price">₹3,499</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-section reveal" id="why">
+        <div class="why-text">
+            <h2>Why ATELYN</h2>
+            <p style="color: #888; font-size: 0.9rem; margin-bottom: 20px;">Identity over trends. Quality over excess. We build trust through premium craftsmanship and exclusive design.</p>
+            <a href="#" class="btn btn-outline">Our Philosophy</a>
+        </div>
+        <div class="why-img"></div>
+    </section>
+
+    <section class="newsletter reveal">
+        <h2>Join the Inner Circle</h2>
+        <p style="color: #666; margin-bottom: 30px; letter-spacing: 1px;">Subscribe for exclusive drops and private collection access.</p>
+        <form onsubmit="return false;">
+            <input type="email" placeholder="YOUR EMAIL">
+            <button type="submit">Join</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>KEKLYN PRIVATE LIMITED | STARTUP INDIA REGISTERED | WWW.KEKLYN.COM</p>
+    </footer>
+
+    <script>
+        const reveal = () => {
+            document.querySelectorAll('.reveal').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', reveal);
+        window.addEventListener('load', reveal);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATELYN | Modern Luxury</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+
+
+
+        
+
+
+
+    </style>
+</head>
+<body>
+
+
+ 
+</body>
+</html>

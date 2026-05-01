@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | ATELYN Modern Luxury</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #050505;
+            --atelyn-gold: #D4AF37;
+            --text-main: #ffffff;
+            --font-header: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-deep); color: var(--text-main); font-family: var(--font-body); display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+
+        /* Background Element [cite: 298] */
+        .bg-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1920&q=80') center/cover;
+            z-index: -1;
+        }
+
+        .auth-container { width: 100%; max-width: 420px; padding: 50px 40px; background: rgba(10, 10, 10, 0.98); border: 1px solid rgba(212, 175, 55, 0.2); backdrop-filter: blur(15px); }
+
+        .auth-header { text-align: center; margin-bottom: 40px; }
+        .logo { font-family: var(--font-header); font-size: 2.2rem; letter-spacing: 8px; color: var(--atelyn-gold); text-decoration: none; display: block; margin-bottom: 10px; text-transform: uppercase; }
+        .auth-header p { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; color: #666; }
+
+        /* Form Styling */
+        .form-group { margin-bottom: 25px; }
+        label { display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: #555; margin-bottom: 10px; }
+        input { 
+            width: 100%; background: #0a0a0a; border: 1px solid #222; padding: 16px; 
+            color: #fff; outline: none; transition: 0.3s; font-family: var(--font-body); font-size: 0.9rem;
+        }
+        input:focus { border-color: var(--atelyn-gold); background: #111; }
+
+        .login-btn { 
+            width: 100%; background: var(--atelyn-gold); color: #000; padding: 18px; 
+            border: none; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; 
+            cursor: pointer; transition: 0.3s; margin-top: 10px; font-size: 0.8rem;
+        }
+        .login-btn:hover { background: #fff; transform: translateY(-2px); }
+
+        .auth-footer { text-align: center; margin-top: 35px; font-size: 0.75rem; color: #555; letter-spacing: 1px; }
+        .auth-footer a { color: var(--atelyn-gold); text-decoration: none; transition: 0.3s; margin-left: 5px; }
+        .auth-footer a:hover { color: #fff; }
+
+        .forgot-link { display: block; text-align: right; margin-top: 10px; font-size: 0.7rem; color: #444; text-decoration: none; transition: 0.3s; }
+        .forgot-link:hover { color: var(--atelyn-gold); }
+    </style>
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <main class="auth-container">
+        <div class="auth-header">
+            <a href="index.html" class="logo">ATELYN</a>
+            <p>Welcome Back</p>
+        </div>
+
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="email@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" placeholder="••••••••" required>
+                <a href="#" class="forgot-link">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="login-btn">Sign In</button>
+        </form>
+
+        <div class="auth-footer">
+            New to ATELYN? <a href="register.html">Create Account</a>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs | ATELYN Support</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #050505;
+            --atelyn-gold: #D4AF37;
+            --text-main: #ffffff;
+            --font-header: 'Playfair Display', serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-deep); color: var(--text-main); font-family: 'Montserrat', sans-serif; line-height: 1.6; }
+
+        .faq-header { padding: 80px 8% 40px; text-align: center; }
+        .faq-header h1 { font-family: var(--font-header); font-size: 2.5rem; color: var(--atelyn-gold); letter-spacing: 5px; text-transform: uppercase; }
+
+        .faq-container { max-width: 800px; margin: 0 auto 100px; padding: 0 8%; }
+        .faq-item { border-bottom: 1px solid #222; padding: 25px 0; }
+        .faq-question { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--atelyn-gold); cursor: pointer; display: flex; justify-content: space-between; }
+        .faq-answer { margin-top: 15px; font-size: 0.85rem; color: #888; display: none; }
+        .faq-item.active .faq-answer { display: block; }
+    </style>
+</head>
+<body>
+    <div class="faq-header"><h1>Support & FAQs</h1></div>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">Shipping & Delivery <span>+</span></div>
+            <div class="faq-answer">Every ATELYN order is delivered with premium packaging to reflect our luxury identity. We offer free shipping on orders above ₹5,000[cite: 120, 121, 275].</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Returns & Exchanges <span>+</span></div>
+            <div class="faq-answer">We accept returns and exchanges for items in their original condition within a specified window. Please refer to our Return & Exchange page for full details[cite: 244].</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Sizing Guide <span>+</span></div>
+            <div class="faq-answer">Our collections follow modern fit standards. Detailed size charts are available on every product page to ensure "Elegance in Every Thread"[cite: 206, 276].</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Payment Options <span>+</span></div>
+            <div class="faq-answer">We offer secure checkout through Credit/Debit cards, UPI, and Cash on Delivery (COD) highlights for your convenience[cite: 232, 275].</div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => { q.parentElement.classList.toggle('active'); });
+        });
+    </script>
+</body>
+</html>

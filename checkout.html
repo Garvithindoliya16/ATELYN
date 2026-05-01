@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout | ATELYN Modern Luxury</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #050505;
+            --bg-accent: #0f0f0f;
+            --atelyn-gold: #D4AF37;
+            --text-main: #ffffff;
+            --font-header: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition: all 0.4s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-deep); color: var(--text-main); font-family: var(--font-body); }
+
+        /* Navigation */
+        nav {
+            padding: 20px 8%; display: flex; justify-content: space-between; align-items: center;
+            background: var(--bg-deep); border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .logo { font-family: var(--font-header); font-size: 1.5rem; letter-spacing: 4px; color: var(--atelyn-gold); text-decoration: none; }
+
+        .checkout-container { 
+            display: grid; grid-template-columns: 1fr 450px; gap: 60px; 
+            padding: 60px 8%; max-width: 1400px; margin: 0 auto; 
+        }
+
+        h2 { font-family: var(--font-header); font-size: 1.5rem; color: var(--atelyn-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 30px; }
+
+        /* Form Styling [cite: 230-231] */
+        .form-section { background: var(--bg-accent); padding: 40px; border: 1px solid #222; margin-bottom: 30px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .full-width { grid-column: span 2; }
+        
+        .input-group { margin-bottom: 20px; }
+        label { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-bottom: 10px; }
+        input, select { 
+            width: 100%; background: #111; border: 1px solid #333; padding: 15px; 
+            color: #fff; outline: none; transition: 0.3s; 
+        }
+        input:focus { border-color: var(--atelyn-gold); }
+
+        /* Order Summary [cite: 233] */
+        .order-summary { background: #000; padding: 40px; border: 1px solid var(--atelyn-gold); position: sticky; top: 120px; }
+        .summary-item { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 0.9rem; color: #888; }
+        .total-row { border-top: 1px solid #333; padding-top: 20px; margin-top: 20px; color: var(--atelyn-gold); font-weight: 600; font-size: 1.2rem; }
+
+        /* Payment Gateway Placeholder [cite: 232] */
+        .payment-methods { margin-top: 30px; padding-top: 30px; border-top: 1px solid #222; }
+        .method-option { 
+            display: flex; align-items: center; gap: 15px; background: #111; 
+            padding: 15px; margin-bottom: 10px; border: 1px solid #333; cursor: pointer; 
+        }
+        .method-option:hover { border-color: var(--atelyn-gold); }
+
+        .complete-btn { 
+            width: 100%; background: var(--atelyn-gold); color: #000; padding: 20px; 
+            border: none; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; 
+            cursor: pointer; margin-top: 30px; transition: 0.3s; 
+        }
+        .complete-btn:hover { background: #fff; }
+
+        @media (max-width: 1024px) { .checkout-container { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">ATELYN</a>
+        <div style="font-size: 0.7rem; letter-spacing: 2px; color: #666;">SECURE CHECKOUT</div>
+    </nav>
+
+    <main class="checkout-container">
+        <div class="checkout-form">
+            <section class="form-section">
+                <h2>Shipping Details</h2>
+                <div class="form-grid">
+                    <div class="input-group"><label>First Name</label><input type="text"></div>
+                    <div class="input-group"><label>Last Name</label><input type="text"></div>
+                    <div class="input-group full-width"><label>Street Address</label><input type="text"></div>
+                    <div class="input-group"><label>City</label><input type="text"></div>
+                    <div class="input-group"><label>Postal Code</label><input type="text"></div>
+                    <div class="input-group full-width"><label>Phone Number</label><input type="tel"></div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Payment Method</h2> <div class="payment-methods">
+                    <div class="method-option">
+                        <input type="radio" name="payment" checked>
+                        <label style="margin-bottom: 0; cursor: pointer;">Credit / Debit Card</label>
+                    </div>
+                    <div class="method-option">
+                        <input type="radio" name="payment">
+                        <label style="margin-bottom: 0; cursor: pointer;">UPI / Digital Wallets</label>
+                    </div>
+                    <div class="method-option">
+                        <input type="radio" name="payment">
+                        <label style="margin-bottom: 0; cursor: pointer;">Cash on Delivery (COD)</label>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <aside class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-item">
+                <span>Signature Oxford Shirt (M)</span>
+                <span>₹3,299</span>
+            </div>
+            <div class="summary-item">
+                <span>Shipping</span>
+                <span style="color: var(--atelyn-gold);">Free</span>
+            </div>
+            <div class="summary-item">
+                <span>Tax</span>
+                <span>₹593</span>
+            </div>
+            <div class="total-row summary-item">
+                <span>Total Amount</span>
+                <span>₹3,892</span>
+            </div>
+
+            <button class="complete-btn">Complete Purchase</button>
+            <p style="font-size: 0.6rem; color: #444; text-align: center; margin-top: 20px; letter-spacing: 1px;">
+                Secure Transaction Backed by KEKLYN PRIVATE LIMITED
+            </p>
+        </aside>
+    </main>
+
+    <footer style="padding: 40px 8%; text-align: center; color: #333; font-size: 0.7rem; letter-spacing: 2px;">
+        &copy; 2026 ATELYN | PREMIUM FASHION VERTICAL BY KEKLYN PRIVATE LIMITED
+    </footer>
+
+</body>
+</html>

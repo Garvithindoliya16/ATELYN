@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Collection | ATELYN Modern Luxury</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #050505;
+            --atelyn-gold: #D4AF37;
+            --text-main: #ffffff;
+            --font-header: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-deep); color: var(--text-main); font-family: var(--font-body); }
+
+        /* Navigation Inherited from Home */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 8%; background: rgba(5, 5, 5, 0.95);
+            position: sticky; top: 0; z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .logo { font-family: var(--font-header); font-size: 1.5rem; letter-spacing: 4px; color: var(--atelyn-gold); text-decoration: none; }
+
+        /* Shop Header */
+        .shop-header { padding: 60px 8% 20px; text-align: center; }
+        .shop-header h1 { font-family: var(--font-header); font-size: 2.5rem; letter-spacing: 5px; color: var(--atelyn-gold); text-transform: uppercase; }
+
+        /* Layout Container */
+        .container { display: grid; grid-template-columns: 250px 1fr; gap: 40px; padding: 40px 8%; }
+
+        /* Sidebar Filters [cite: 177-178] */
+        .filters h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--atelyn-gold); margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 10px; }
+        .filter-group { margin-bottom: 30px; }
+        .filter-link { display: block; color: #888; text-decoration: none; font-size: 0.85rem; margin-bottom: 12px; transition: 0.3s; cursor: pointer; }
+        .filter-link:hover, .filter-link.active { color: var(--atelyn-gold); padding-left: 5px; }
+
+        /* Product Grid [cite: 156, 208-212] */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+        .product-card { background: #0a0a0a; border: 1px solid #1a1a1a; transition: var(--transition); position: relative; overflow: hidden; }
+        .product-card:hover { border-color: var(--atelyn-gold); transform: translateY(-5px); }
+        
+        .img-box { height: 400px; overflow: hidden; position: relative; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s ease; }
+        .product-card:hover .img-box img { transform: scale(1.08); }
+
+        .quick-add {
+            position: absolute; bottom: -50px; width: 100%; background: var(--atelyn-gold);
+            color: #000; text-align: center; padding: 12px; font-weight: 600; font-size: 0.75rem;
+            text-transform: uppercase; transition: 0.3s; cursor: pointer;
+        }
+        .product-card:hover .quick-add { bottom: 0; }
+
+        .info { padding: 20px; text-align: center; }
+        .info h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; color: #ddd; }
+        .price { color: var(--atelyn-gold); font-weight: 600; font-size: 1rem; }
+
+        /* Best Seller Badge [cite: 188-189] */
+        .badge { position: absolute; top: 15px; left: 15px; background: var(--atelyn-gold); color: #000; font-size: 0.6rem; padding: 4px 10px; font-weight: 700; text-transform: uppercase; z-index: 10; }
+
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; }
+            .filters { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">ATELYN</a>
+        <div style="font-size: 0.7rem; letter-spacing: 2px; color: #666;">PREMIUM MENSWEAR</div>
+        <div style="color: var(--atelyn-gold); font-size: 0.8rem; cursor: pointer;">BAG (0)</div>
+    </nav>
+
+    <header class="shop-header">
+        <h1>Men's Collection</h1>
+    </header>
+
+    <div class="container">
+        <aside class="filters">
+            <div class="filter-group">
+                <h4>Categories</h4>
+                <a class="filter-link active">All Products</a>
+                <a class="filter-link">Premium T-Shirts</a>
+                <a class="filter-link">Polo T-Shirts</a>
+                <a class="filter-link">Shirts</a>
+                <a class="filter-link">Trousers</a>
+                <a class="filter-link">Jackets</a>
+            </div>
+
+            <div class="filter-group">
+                <h4>Size</h4>
+                <a class="filter-link">Small</a>
+                <a class="filter-link">Medium</a>
+                <a class="filter-link">Large</a>
+                <a class="filter-link">XL | XXL</a>
+            </div>
+
+            <div class="filter-group">
+                <h4>Price</h4>
+                <a class="filter-link">Under ₹2,000</a>
+                <a class="filter-link">₹2,000 - ₹5,000</a>
+                <a class="filter-link">Above ₹5,000</a>
+            </div>
+        </aside>
+
+        <main class="grid">
+            <a class="product-card" href="product-detail.html">
+                <div class="badge">Best Seller</div>
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80" alt="Premium Tee">
+                    <div class="quick-add">Add to Bag</div>
+                </div>
+                <div class="info">
+                    <h3>Premium Essential Tee</h3>
+                    <p class="price">₹1,899</p>
+                </div>
+            </a>
+
+            <div class="product-card">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=600&q=80" alt="Polo">
+                    <div class="quick-add">Add to Bag</div>
+                </div>
+                <div class="info">
+                    <h3>Signature Polo Shirt</h3>
+                    <p class="price">₹2,499</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=600&q=80" alt="Shirt">
+                    <div class="quick-add">Add to Bag</div>
+                </div>
+                <div class="info">
+                    <h3>Modern Fit Oxford Shirt</h3>
+                    <p class="price">₹3,299</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80" alt="Jacket">
+                    <div class="quick-add">Add to Bag</div>
+                </div>
+                <div class="info">
+                    <h3>Urban Essential Jacket</h3>
+                    <p class="price">₹5,899</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1624371414361-e6709405d523?auto=format&fit=crop&w=600&q=80" alt="Trousers">
+                    <div class="quick-add">Add to Bag</div>
+                </div>
+                <div class="info">
+                    <h3>Slim Fit Chino Trousers</h3>
+                    <p class="price">₹3,499</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer style="padding: 60px 8%; text-align: center; border-top: 1px solid #1a1a1a; color: #444; font-size: 0.7rem; letter-spacing: 2px;">
+        KEKLYN PRIVATE LIMITED | STARTUP INDIA REGISTERED | WWW.KEKLYN.COM
+    </footer>
+
+</body>
+</html>

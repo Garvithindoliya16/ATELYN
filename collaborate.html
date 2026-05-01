@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborate | ATELYN Creators</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Shared root and nav styles as above */
+        :root { --bg-deep: #050505; --atelyn-gold: #D4AF37; --font-header: 'Playfair Display', serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-deep); color: #fff; font-family: 'Montserrat', sans-serif; }
+        
+        .collab-header { padding: 100px 8% 50px; text-align: center; border-bottom: 1px solid #1a1a1a; }
+        .collab-header h1 { font-family: var(--font-header); color: var(--atelyn-gold); font-size: 2.5rem; letter-spacing: 5px; }
+
+        .collab-container { max-width: 900px; margin: 60px auto; padding: 0 8%; }
+        .intro-text { text-align: center; margin-bottom: 60px; color: #888; font-size: 1rem; }
+
+        .collab-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; background: #0a0a0a; padding: 40px; border: 1px solid #222; }
+        .full { grid-column: span 2; }
+        label { font-size: 0.7rem; color: #666; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; display: block; }
+        input, textarea { width: 100%; background: #111; border: 1px solid #333; padding: 15px; color: #fff; margin-bottom: 20px; outline: none; }
+        input:focus { border-color: var(--atelyn-gold); }
+        .collab-btn { width: 100%; grid-column: span 2; background: var(--atelyn-gold); color: #000; padding: 18px; border: none; font-weight: 600; text-transform: uppercase; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="collab-header"><h1>Collaborate With ATELYN</h1></div>
+    <div class="collab-container">
+        <p class="intro-text">We are looking for fashion creators, influencers, and brand ambassadors who value confidence, class, and distinction [cite: 372-376].</p>
+        <div class="collab-form">
+            <div class="input-group"><label>Name</label><input type="text"></div>
+            <div class="input-group"><label>Social Links</label><input type="text"></div>
+            <div class="input-group"><label>Audience Size</label><input type="text"></div>
+            <div class="input-group"><label>Primary Platform</label><input type="text"></div>
+            <div class="input-group full"><label>Collaboration Proposal</label><textarea rows="5"></textarea></div>
+            <button class="collab-btn">Submit Proposal</button>
+        </div>
+    </div>
+</body>
+</html>
